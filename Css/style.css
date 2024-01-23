@@ -1,0 +1,649 @@
+* {
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #222222;
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+
+:root {
+  scroll-behavior: smooth;
+  --Primary-color:#89BF55;
+  --Second-color:rgba(255, 255,255, 0.5);
+  --Third-Color:#ffff;
+  --Fourth-Color:#bac964;
+}
+
+#loading-screen {
+  width: 100% !important;
+  height: 100% !important;
+  background-color: rgba(6, 6, 6, 0.9);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center !important;
+  align-items: center !important;
+  top: 0;
+  left: 0;
+  z-index: 10000000000000000000000000;
+}
+#loading-screen h6 {
+  color: #89BF55;
+  padding: 20px 0 !important;
+}
+#loading-screen .loader {
+  transform: rotateZ(45deg);
+  perspective: 1000px;
+  border-radius: 50%;
+  width: 85px;
+  height: 85px;
+  color: #89BF55;
+}
+#loading-screen .loader:before,
+#loading-screen .loader:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+  transform: rotateX(70deg);
+  animation: 1s spin linear infinite;
+}
+#loading-screen .loader:after {
+  color: #FF3D00;
+  transform: rotateY(70deg);
+  animation-delay: 0.4s;
+}
+@keyframes rotate {
+  0% {
+    transform: translate(-50%, -50%) rotateZ(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateZ(360deg);
+  }
+}
+@keyframes rotateccw {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+}
+@keyframes spin {
+  0%, 100% {
+    box-shadow: 0.2em 0px 0 0px currentcolor;
+  }
+  12% {
+    box-shadow: 0.2em 0.2em 0 0 currentcolor;
+  }
+  25% {
+    box-shadow: 0 0.2em 0 0px currentcolor;
+  }
+  37% {
+    box-shadow: -0.2em 0.2em 0 0 currentcolor;
+  }
+  50% {
+    box-shadow: -0.2em 0 0 0 currentcolor;
+  }
+  62% {
+    box-shadow: -0.2em -0.2em 0 0 currentcolor;
+  }
+  75% {
+    box-shadow: 0px -0.2em 0 0 currentcolor;
+  }
+  87% {
+    box-shadow: 0.2em -0.2em 0 0 currentcolor;
+  }
+}
+
+#btn-up {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(168, 176, 183, 0.3);
+  color: #89BF55;
+  border: 3px solid;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 65px;
+  right: 65px;
+  z-index: 999999999999;
+  display: none;
+}
+#btn-up i {
+  font-size: 20px;
+}
+
+/* =========================  Navbar  ======================= */
+nav {
+  transition: all 2s !important;
+}
+nav .nav-link {
+  color: white !important;
+  font-size: 1rem !important;
+  font-weight: 200 !important;
+  line-height1: 24px !important;
+}
+nav .nav-link .nav-link:active {
+  color: #89BF55 !important;
+}
+
+/* =========================  Home  ======================= */
+.bg-homea {
+  background-image: url(../images/AhmedKhaled.jpg);
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  position: relative;
+}
+.bg-homea .bg-layer {
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  width: 100%;
+  height: 100%;
+}
+.bg-homea .contant-home {
+  padding-top: 30px !important;
+}
+.bg-homea .contant-home h2 {
+  color: white !important;
+  font-size: 70px !important;
+  font-weight: 200 !important;
+  line-height1: 84px !important;
+}
+.bg-homea .contant-home h1 {
+  color: white !important;
+  font-size: 75px !important;
+  font-weight: 600 !important;
+  line-height1: 84px !important;
+}
+.bg-homea .contant-home h4 {
+  margin-top: 1.09rem;
+  color: rgba(255, 255, 255, 0.5) !important;
+  font-size: 1.5rem !important;
+  font-weight: 200 !important;
+  line-height1: 27px !important;
+}
+
+/* =========================  Portfolio  ======================= */
+.nav-tabs {
+  --bs-nav-tabs-border-width:0p ;
+}
+.nav-tabs .nav-item .nav-link {
+  border: 0PX transparent;
+  color: rgba(255, 255, 255, 0.5) !important;
+  font-size: 1rem !important;
+  font-weight: 300 !important;
+  line-height1: 27px !important;
+}
+.nav-tabs .nav-item .nav-link.active {
+  background-color: transparent !important;
+  border: 0PX !important;
+  color: var(--Fourth-Color) !important;
+}
+.nav-tabs .nav-item .nav-link:hover {
+  color: var(--Fourth-Color) !important;
+}
+
+.tab-content .item-Portfolio {
+  background-color: rgb(51, 51, 51);
+  border-radius: 10px !important;
+  padding: 15px !important;
+  margin: 10px 0 !important;
+  position: relative;
+}
+.tab-content .item-Portfolio p {
+  color: #b2c251 !important;
+  font-size: 0.9rem !important;
+  font-weight: 300 !important;
+  line-height1: 24px !important;
+}
+.tab-content .item-Portfolio img {
+  width: 100% !important;
+}
+.tab-content .item-Portfolio .screen-hover {
+  display: flex;
+  justify-content: center !important;
+  align-items: center !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background-color: rgba(168, 176, 183, 0.3);
+  z-index: 1;
+  border-radius: 12px !important;
+  transition: all 2s;
+  overflow: hidden;
+}
+.tab-content .item-Portfolio .screen-hover i {
+  padding: 0px 15px !important;
+  color: #7cff01 !important;
+  font-size: 1.7rem !important;
+  font-weight: 200 !important;
+  line-height1: 27px !important;
+}
+.tab-content .item-Portfolio:hover .screen-hover {
+  height: 100%;
+}
+
+/* =========================  My Resume  ======================= */
+#Resume aside {
+  display: flex;
+  justify-content: space-between;
+  width: 55% !important;
+}
+#Resume aside h5 {
+  color: white !important;
+  font-size: 1.6rem !important;
+  font-weight: 200 !important;
+  line-height1: 30px !important;
+}
+#Resume .item-resume {
+  background-color: rgb(51, 51, 51);
+  padding: 30px;
+  margin: 25px 0;
+  border-radius: 10px;
+  width: 100%;
+}
+#Resume .item-resume a {
+  transition: all 3s;
+}
+#Resume .item-resume a i {
+  font-size: 14px !important;
+  margin-left: 6px;
+  transition: all 3s;
+}
+#Resume .item-resume a :hover {
+  color: #bac964 !important;
+}
+#Resume .item-resume a :hover i {
+  margin-left: 15px !important;
+}
+#Resume .item-resume h6 {
+  color: white !important;
+}
+#Resume .item-resume h5 {
+  color: #bac964 !important;
+  font-size: 1.1rem !important;
+  font-weight: 200 !important;
+  line-height1: 24px !important;
+  padding: 8px 0;
+}
+#Resume .item-resume p, #Resume .item-resume span {
+  color: rgba(255, 255, 255, 0.5) !important;
+  font-size: 1rem !important;
+  font-weight: 300 !important;
+  line-height1: 27px !important;
+}
+#Resume .text-About {
+  color: white !important;
+  font-size: 2rem !important;
+  font-weight: 200 !important;
+  line-height1: 36px !important;
+  padding: 0 20px;
+  margin: 0px 10px;
+}
+#Resume .text-About::after {
+  content: "Me";
+  padding: 0 6px;
+  color: white !important;
+  font-size: 2rem !important;
+  font-weight: 800 !important;
+  line-height1: 36px !important;
+}
+#Resume p {
+  color: rgba(255, 255, 255, 0.5) !important;
+  font-size: 1.2rem !important;
+  font-weight: 200 !important;
+  line-height1: 30px !important;
+}
+#Resume .btn-hireme {
+  background-color: #bac964 !important;
+  color: white !important;
+  font-size: 0.9rem !important;
+  font-weight: 400 !important;
+  line-height1: 18px !important;
+}
+#Resume .btn-hireme:hover {
+  background: rgb(178, 194, 81) !important;
+}
+#Resume .btn-Download {
+  background: #5a6268 !important;
+  color: white !important;
+  font-size: 0.9rem !important;
+  font-weight: 400 !important;
+  line-height1: 18px !important;
+}
+#Resume .btn-Download:hover {
+  background: rgba(90, 98, 104, 0.8) !important;
+}
+
+.item-skills {
+  width: 100%;
+  height: 100px;
+  position: relative;
+}
+.item-skills .containers {
+  height: 30vh;
+  width: 15vw;
+  position: absolute;
+  top: 25vh;
+  left: 10vw;
+  transform: translate(-50%, -50%);
+  perspective: 1000px;
+}
+.item-skills .containers .box {
+  height: 90px;
+  width: 90px;
+  position: absolute;
+  top: 10px;
+  left: 50px;
+  /* transform: rotate(-90deg); */
+  transform-style: preserve-3d;
+  /* transform: rotateY(130deg); */
+  animation: animate 70s infinite;
+  /* transform: rotateX(10deg) rotateY(130deg) ; */
+  /* transform: rotateX(180deg) rotateY(-50deg) rotateZ(15deg) ; */
+}
+.item-skills .containers .box .card {
+  height: 90px;
+  width: 90px;
+  text-align: center;
+  padding: 20px 0;
+  color: rgba(255, 0, 0, 0.775);
+  background: radial-gradient(rgba(5, 221, 245, 0.2), rgba(6, 150, 235, 0.2));
+  border: 2px solid rgb(5, 221, 245);
+  box-sizing: border-box;
+  position: absolute;
+}
+.item-skills .containers .box .card i {
+  font-size: 35px;
+}
+.item-skills .containers .box .card span {
+  color: white;
+}
+@keyframes animate {
+  0% {
+    transform: rotateX(45deg) rotateY(-45deg);
+  }
+  25% {
+    transform: rotateX(-45deg) rotateY(-45deg);
+  }
+  50% {
+    transform: rotateX(45deg) rotateY(45deg);
+  }
+  75% {
+    transform: rotateX(-45deg) rotateY(45deg);
+  }
+  100% {
+    transform: rotateX(45deg) rotateY(-45deg);
+  }
+}
+.item-skills #front {
+  transform: translateZ(44px);
+}
+.item-skills #back {
+  transform: translateZ(-44px) rotateZ(-360deg);
+}
+.item-skills #left {
+  right: 44px;
+  transform: rotateY(-90deg);
+}
+.item-skills #right {
+  left: 44px;
+  transform: rotateY(90deg);
+}
+.item-skills #top {
+  bottom: 44px;
+  transform: rotateX(90deg);
+}
+.item-skills #bottom {
+  top: 44px;
+  transform: rotateX(-90deg);
+}
+
+#Services .item-Services {
+  padding: 30px;
+  width: 100%;
+  background-color: rgb(51, 51, 51);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px 0;
+}
+#Services .item-Services .cont-icone {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #b2c251 !important;
+}
+#Services .item-Services i {
+  color: rgb(51, 51, 51) !important;
+  font-size: 35px !important;
+}
+#Services .item-Services p {
+  color: rgba(255, 255, 255, 0.5);
+}
+#Services .item-Services a {
+  padding: 85px 0;
+  color: #bac964 !important;
+  font-size: 1rem !important;
+  font-weight: 300 !important;
+  line-height1: 27px !important;
+}
+#Services .item-Services a i {
+  font-size: 12px !important;
+  color: #bac964 !important;
+}
+#Services .item-Services a:hover span {
+  margin: 0 10px;
+}
+#Services .item-Services span {
+  transition: all 1s;
+}
+
+#Contact .container {
+  width: 60% !important;
+  background-color: rgb(51, 51, 51) !important;
+  border-radius: 50px 0;
+}
+#Contact .container label {
+  color: #bac964;
+}
+#Contact .container label a {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+footer p {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+footer .fot-icone {
+  text-align: center;
+  width: 65px;
+  height: 65px;
+  background-color: #333333;
+  border-radius: 50%;
+  border: solid 3.5px #89BF55;
+  border-bottom: 0;
+  border-left: 0px;
+  border-right: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 10px;
+}
+footer .fot-icone span i {
+  font-size: 1.7rem;
+  color: #b2c251 !important;
+  font-size: 1.7rem !important;
+  font-weight: 400 !important;
+  line-height1: 22px !important;
+  transition: all 2s;
+}
+footer .fot-icone span i:hover {
+  transform: scale(1.3);
+  transform: rotate(8deg);
+  transform-origin: bottom right;
+}
+footer .fot-icone .fot-icone:hover i {
+  transform: rotate(45deg);
+}
+
+@media (max-width: 767.98px) {
+  #btn-up {
+    width: 35px;
+    height: 35px;
+    bottom: 105px;
+    right: 25px;
+  }
+  #Home .contant-home h2 {
+    color: white !important;
+    font-size: 35px !important;
+    font-weight: 200 !important;
+    line-height1: 84px !important;
+  }
+  #Home .contant-home h1 {
+    color: white !important;
+    font-size: 35px !important;
+    font-weight: 700 !important;
+    line-height1: 84px !important;
+  }
+  #Home .contant-home h4 {
+    color: rgba(255, 255, 255, 0.5) !important;
+    font-size: 1rem !important;
+    font-weight: 300 !important;
+    line-height1: 27px !important;
+  }
+  #Portfolio span {
+    padding: 10px 0 !important;
+  }
+  #Portfolio .container {
+    width: 80% !important;
+  }
+  #Portfolio .container .col-lg-4 {
+    padding: 0px;
+    margin: 0;
+  }
+  #Resume {
+    margin: 0px 0 !important;
+    padding: 2px !important;
+  }
+  #Resume span {
+    padding: 0px 0px 20px !important;
+  }
+  #Resume .container {
+    width: 80% !important;
+  }
+  #Resume .container .col-lg-6 {
+    padding: 0px;
+    margin: 0px 0 !important;
+  }
+  #Resume #About {
+    margin: 0px !important;
+    padding: 0px !important;
+  }
+  #Resume #About .container {
+    width: 80% !important;
+    margin: 0px auto !important;
+    padding: 10px !important;
+  }
+  #Resume #About .container .col-lg-5 {
+    width: 100%;
+  }
+  #Resume #About .container .col-lg-5 div {
+    padding: 0px !important;
+    margin: 10px auto !important;
+  }
+  #Resume #About .container .col-lg-5 a {
+    margin-bottom: 15px !important;
+  }
+  #Skills {
+    padding-top: 30px !important;
+    margin-top: 0px !important;
+  }
+  #Skills div {
+    padding: 0px !important;
+    margin: 0px auto !important;
+  }
+  #Skills div .py-5 {
+    padding: 0px !important;
+  }
+  #Skills div .container {
+    width: 95% !important;
+    margin: auto !important;
+  }
+  #Skills div .container .col-lg-3 {
+    width: 46.9%;
+    padding: 25px 0px !important;
+    margin: auto !important;
+  }
+  #Skills div .box {
+    left: 25px !important;
+  }
+  #Skills div .box .card {
+    padding-top: 15px !important;
+  }
+  #Services span {
+    padding: 0px !important;
+    margin: 0px !important;
+  }
+  #Services .container {
+    width: 80% !important;
+    padding: 0px !important;
+    margin: 15px auto !important;
+  }
+  #Services .container .col-lg-4 {
+    margin: 10px auto;
+  }
+  #Contact {
+    padding: 0px 0px 10% !important;
+  }
+  #Contact div {
+    padding: 0px !important;
+    margin: 0px !important;
+  }
+  #Contact span {
+    padding: 0px !important;
+    margin: 0px !important;
+  }
+  #Contact .container {
+    width: 90% !important;
+    margin: 0px auto !important;
+  }
+  #Contact .container .row {
+    padding-bottom: 25px !important;
+    text-align: center;
+  }
+  #Contact .container .row .offset-1 {
+    margin: 0px !important;
+    padding: 0px !important;
+  }
+  #Contact .container .row .item div {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+  }
+  footer {
+    width: 50% !important;
+    margin: auto;
+  }
+  footer .fot-icone {
+    width: 45px !important;
+    height: 45px !important;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
